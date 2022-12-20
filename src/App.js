@@ -17,8 +17,10 @@ function App() {
       </div>
       
       <div>
-        <button onClick={() => dispatch(logIn())}>Log In</button>
-        {isLogged ? <h3>Valuable Information</h3> : ''} 
+      {!isLogged 
+        ? <button onClick={() => dispatch(logIn())}>Login</button> 
+        : <div><button onClick={() => dispatch(logIn())}>Logout</button>
+          <h3>Valuable Information</h3> </div>}
       </div>
         
     </div>
